@@ -17,14 +17,16 @@
 				<p><b>Technology</b>: MacPro Desktop(@work- design studio) MacBook Pro(@home- newer model and updated IOS, external hard drive), iPhone6s or higher(@mobile- International data plan as Jose' travels a handful of times a year for work, was born in Montreal and has lived internationally for both school and work). Absolutely efficient in Windows, but in the design industry, Mac is preferred.</p>
 				<p><b>Attitudes and Behaviors</b>:Seasoned young professional with over a decade of experience in luxury product design. Not applying for jobs below his salary or expectation scope. Works internationally; has been employed in New York, Paris, and Lasaunne, Switzerland. Elevated sensibility.</p>
 				<p><b>Frustrations and Needs</b>:Jose' is not looking to be hired in any other market aside from the luxury niche. He is not looking to work for a startup either (except his own, "Les Chardons-Bleus" which is located in Paris- working with his team on his own time). Salary expectations must be met as well as product expectations. Seeking "long-term" with growth potential, new contracts, expansion, etc.</p>
-			<p><b>Main Goal</b>:</p>
-				<p>Landing a full-time, high-end design position in the US, Europe, or Asia which will be "home" for at least 3 years. Currently residing in nyc, relocation is a welcomed option and will be considered given the appropriate remuneration. As previously stated, emphasis on vertical growth potential within the company.</p>
-		<h3>Use Case</h3>
+			<p><b>Main Goal</b>:
+				Landing a full-time, high-end design position in the US, Europe, or Asia which will be "home" for at least 3 years. Currently residing in nyc, relocation is a welcomed option and will be considered given the appropriate remuneration. As previously stated, emphasis on vertical growth potential within the company.</p>
+		<h3>Use Case: How & Why</h3>
 			<p>Jose' will use Dezeen to search for job opportunities, filter through positions meaningful to his career scope, and then apply to openings specifically.
 			</p>
+			<br>
+			<br>
 		<h3 align="left">Interaction Flow: Specific Steps</h3>
 				<ol>
-					<li>Jose' visits <a href="https://www.dezeenjobs.com/"></a>Dezeen Jobs</li>
+					<li>Jose' visits <a href="https://www.dezeenjobs.com"></a>Dezeen Jobs</li>
 					<li>Dezeen displays list of job opportunities in most recent chronological order</li>
 					<li>Jose' scrolls through jobs and selects most fitting listing (by clicking on job title link)</li>
 					<li>Dezeen displays full job description containing email of employer receiving applicants</li>
