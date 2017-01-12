@@ -41,23 +41,30 @@
 					<li>Jos&eacute; is pleased and drinks champagne in anticipation of getting a great new job! Lives happily ever after...</li>
 				</ol>
 			<h3>Entities & Attributes</h3>
-				<ul>PROFILE
+				<ul><b>PROFILE</b>
 						<li>profileName</li>
 						<li>profileEmail</li>
 						<li>profileWebsite</li>
 				</ul>
-				<ul>JOB POST
+				<ul><b>JOB POST</b>
 					<li>jobPostProfileID</li>
 					<li>jobPostDate</li>
 					<li>jobPostContent</li>
 					<li>jobPostLinktoApplication</li>
 				</ul>
 				<ul>
-					APPLY
+					<b>APPLY</b>
 					<li>applyContent</li>
 					<li>applyLink</li>
 					<li>applyEmail</li>
 				</ul>
+			<h3>Relations</h3>
+			<ul>
+				One <b>USER</b> can have one <b>PROFILE</b>
+				One <b>JOB POST</b> can have many <b>VIEWS</b>
+				Many <b>PROFILES</b> can apply to many <b>JOB POSTINGS</b>
+			</ul>
+
 		</main>
 		</body>
 </html>
