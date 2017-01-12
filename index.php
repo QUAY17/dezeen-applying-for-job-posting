@@ -6,10 +6,10 @@
 	</head>
 	<body>
 		<header>
-			<h1 align="center">Applying for a job posting on Dezeen</h1>
+			<h1>APPLYING FOR A JOB ON DEZEEN</h1>
 			</header>
 		<main>
-			<img src="images/jose.jpg" alt="jose' ferrufino" align="left" width="50%" height="50%">
+			<img src="images/jose.jpg" alt="jose' ferrufino" align="center" width="45%" height="50%">
 
 			<h2 align="left">Persona: Jos&eacute;</h2>
 				<p><b>Name</b>: Jos&eacute; Ferrufino<br></p>
@@ -30,7 +30,7 @@
 		<h3>Use Case: How & Why</h3>
 			<p>Jos&eacute; will use Dezeen to search for job opportunities, filter through positions meaningful to his career scope, and then apply directly to potential employers.</p>
 
-		<h3 align="left">Interaction Flow: Specific Steps</h3>
+		<h3>Interaction Flow: Specific Steps</h3>
 				<ol>
 					<li>Jos&eacute; visits <a href="https://www.dezeenjobs.com">Dezeen Jobs</a></li>
 					<li>Dezeen displays list of job opportunities in chronological order (most recently posted)</li>
