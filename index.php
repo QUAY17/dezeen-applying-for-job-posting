@@ -22,17 +22,16 @@
 		<h3>Use Case</h3>
 			<p>Jose' will use Dezeen to search for job opportunities, filter through positions meaningful to his career scope, and then apply to openings specifically.
 			</p>
-		<h3>Interaction Flow: Specific Steps</h3>
+		<h3 align="left">Interaction Flow: Specific Steps</h3>
 				<ol>
-					<li>1. Jose' visits <a href="hhtp://www.dezeenjobs.com"></a>Dezeen Jobs.</li>
-					<li>2. Dezeen displays list of job opportunities in most recent chronological order</li>
-					<li>3. Jose' scrolls through jobs and selects most fitting listing (by clicking on job title link)</li>
-					<li>4. Dezeen displays full job description containing email of employer receiving applicants</li>
-					<li>5. Jose' submits all applicant requirements to said employer email</li>
-					<li>6. Employer receives Jose's submission, is "wow'd" by his accomplishments and sets up an interview</li>
-					<li>7. Jose is pleased and drinks champagne in anticipation of getting a great new job! Lives happily ever after...</li>
+					<li>Jose' visits <a href="https://www.dezeenjobs.com/"></a>Dezeen Jobs</li>
+					<li>Dezeen displays list of job opportunities in most recent chronological order</li>
+					<li>Jose' scrolls through jobs and selects most fitting listing (by clicking on job title link)</li>
+					<li>Dezeen displays full job description containing email of employer receiving applicants</li>
+					<li>Jose' submits all applicant requirements to said employer email</li>
+					<li>Employer receives Jose's submission, is "wow'd" by his accomplishments and sets up an interview</li>
+					<li>Jose is pleased and drinks champagne in anticipation of getting a great new job! Lives happily ever after...</li>
 				</ol>
-				</p>
 		</main>
 		</body>
 </html>
