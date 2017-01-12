@@ -17,20 +17,21 @@
 				<p><b>Technology</b>: MacPro Desktop(@work- design studio) MacBook Pro(@home- newer model and updated IOS, external hard drive), iPhone6s or higher(@mobile- International data plan as Jose' travels a handful of times a year for work, was born in Montreal and has lived internationally for both school and work). Absolutely efficient in Windows, but in the design industry, Mac is preferred.</p>
 				<p><b>Attitudes and Behaviors</b>:Seasoned young professional with over a decade of experience in luxury product design. Not applying for jobs below his salary or expectation scope. Works internationally; has been employed in New York, Paris, and Lasaunne, Switzerland. Elevated sensibility.</p>
 				<p><b>Frustrations and Needs</b>:Jose' is not looking to be hired in any other market aside from the luxury niche. He is not looking to work for a startup either (except his own, "Les Chardons-Bleus" which is located in Paris- working with his team on his own time). Salary expectations must be met as well as product expectations. Seeking "long-term" with growth potential, new contracts, expansion, etc.</p>
-			<p><b>Main Goal<b/>:</p>
+			<p><b>Main Goal</b>:</p>
 				<p>Landing a full-time, high-end design position in the US, Europe, or Asia which will be "home" for at least 3 years. Currently residing in nyc, relocation is a welcomed option and will be considered given the appropriate remuneration. As previously stated, emphasis on vertical growth potential within the company.</p>
 		<h3>Use Case</h3>
 			<p>Jose' will use Dezeen to search for job opportunities, filter through positions meaningful to his career scope, and then apply to openings specifically.
 			</p>
 		<h3>Interaction Flow: Specific Steps</h3>
-				<p>
-					1. Visit <a href="hhtp://www.dezeenjobs.com"></a>
-					2. Dezeen displays list of job opportunities in most recent chronological order
-					3. Jose' scrolls through jobs and selects most fitting listing (by clicking on job title link)
-					4. Dezeen displays full job description containing email of employer receiving applicants
-					5. Jose' submits all applicant requirements to said employer email
-					6. Employer receives Jose's submission, is "wow'd" by his accomplishments and sets up an interview
-					7. Jose is pleased and drinks champagne in anticipation of getting a great new job! Lives happily ever after...
+				<ol>
+					<li>1. Jose' visits <a href="hhtp://www.dezeenjobs.com"></a>Dezeen Jobs.</li>
+					<li>2. Dezeen displays list of job opportunities in most recent chronological order</li>
+					<li>3. Jose' scrolls through jobs and selects most fitting listing (by clicking on job title link)</li>
+					<li>4. Dezeen displays full job description containing email of employer receiving applicants</li>
+					<li>5. Jose' submits all applicant requirements to said employer email</li>
+					<li>6. Employer receives Jose's submission, is "wow'd" by his accomplishments and sets up an interview</li>
+					<li>7. Jose is pleased and drinks champagne in anticipation of getting a great new job! Lives happily ever after...</li>
+				</ol>
 				</p>
 		</main>
 		</body>
