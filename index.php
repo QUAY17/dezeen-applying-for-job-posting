@@ -60,9 +60,9 @@
 				</ul>
 			<h3>Relations</h3>
 			<ul>
-				One <b>USER</b> can have one <b>PROFILE</b>
-				One <b>JOB POST</b> can have many <b>VIEWS</b>
-				Many <b>PROFILES</b> can apply to many <b>JOB POSTINGS</b>
+				<li>One <b>USER</b> can have one <b>PROFILE</b>(1 - n)</li>
+				<li>One <b>JOB POST</b> can have many <b>VIEWS</b> (m - n)</li>
+				<li>Many <b>PROFILES</b> can apply to many <b>JOB POSTINGS (m - n)</b></li>
 			</ul>
 
 		</main>
