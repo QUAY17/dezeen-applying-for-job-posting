@@ -20,8 +20,8 @@
 			<p><b>Main Goal</b>:
 				Landing a full-time, high-end design position in the US, Europe, or Asia which will be "home" for at least 3 years. Currently residing in nyc, relocation is a welcomed option and will be considered given the appropriate remuneration. As previously stated, emphasis on vertical growth potential within the company.</p>
 		<h3>Use Case: How & Why</h3>
-			<p>Jose' will use Dezeen to search for job opportunities, filter through positions meaningful to his career scope, and then apply to openings specifically.
-			</p>
+			Jose' will use Dezeen to search for job opportunities, filter through positions meaningful to his career scope, and then apply to openings specifically.
+			<br>
 			<br>
 			<br>
 		<h3 align="left">Interaction Flow: Specific Steps</h3>
