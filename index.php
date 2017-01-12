@@ -40,6 +40,24 @@
 					<li>Employer receives Jose's submission, is "wow'd" by his accomplishments and sets up an interview</li>
 					<li>Jos&eacute; is pleased and drinks champagne in anticipation of getting a great new job! Lives happily ever after...</li>
 				</ol>
+			<h3>Entities & Attributes</h3>
+				<ul>PROFILE
+						<li>profileName</li>
+						<li>profileEmail</li>
+						<li>profileWebsite</li>
+				</ul>
+				<ul>JOB POST
+					<li>jobPostProfileID</li>
+					<li>jobPostDate</li>
+					<li>jobPostContent</li>
+					<li>jobPostLinktoApplication</li>
+				</ul>
+				<ul>
+					APPLY
+					<li>applyContent</li>
+					<li>applyLink</li>
+					<li>applyEmail</li>
+				</ul>
 		</main>
 		</body>
 </html>
