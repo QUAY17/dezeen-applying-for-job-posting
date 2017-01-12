@@ -10,7 +10,7 @@
 			</header>
 		<main>
 			<img src="images/jose.jpg" alt="jose' ferrufino" align="left" width="50%">
-			<h2 align="left">Persona: Jose'</h2>
+			<h2 align="left">Persona: Jos&eacute;</h2>
 				<p><b>Name</b>: Jose' Ferrufino<br></p>
 				<p><b>Age</b>: 33</p>
 				<p><b>Profession</b>: Luxury Product Design Professional</p>
