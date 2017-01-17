@@ -42,12 +42,13 @@
 				</ol>
 			<h3>Entities & Attributes</h3>
 				<ul><b>PROFILE</b>
+						<li>profileId (primary key)</li>
 						<li>profileName</li>
 						<li>profileEmail</li>
 						<li>profileWebsite</li>
 				</ul>
 				<ul><b>JOB POST</b>
-					<li>jobPostProfileID</li>
+					<li>jobPostProfileId (foreign key)</li>
 					<li>jobPostDate</li>
 					<li>jobPostContent</li>
 					<li>jobPostLinktoApplication</li>
@@ -60,11 +61,19 @@
 				</ul>
 			<h3>Relations</h3>
 			<ul>
-				<li>One <b>USER</b> can have one <b>PROFILE</b>(1 - n)</li>
-				<li>One <b>JOB POST</b> can have many <b>VIEWS</b> (m - n)</li>
+				<li>One <b>USER</b> can have one <b>PROFILE (1 - n)</b></li>
+				<li>One <b>JOB POST</b> can have many <b>VIEWS (m - n)</b></li>
 				<li>Many <b>PROFILES</b> can apply to many <b>JOB POSTINGS (m - n)</b></li>
 			</ul>
 
+		CREATE TABLE profile (
+			profileId INT UNSIGNED AUTO_INCREMENT NOT NULL,
+			profileName VARCHAR(32) NOT NULL,
+			profileEmail VARCHAR(128) NOT NULL,
+			profileWebsite VARCHAR(32),
+			UNIQUE(profileNAme)
+			UNIQUE(profileEmail)
+			PRIMARY KEY(profileId)
 		</main>
 		</body>
 </html>
