@@ -42,30 +42,42 @@
 				</ol>
 			<h3>Entities & Attributes</h3>
 				<ul><b>PROFILE</b>
-						<li>profileId (primary key)</li>
-						<li>profileName</li>
-						<li>profileEmail</li>
-						<li>profileWebsite</li>
+					<li>profileId (primary key)</li>
+					<li>profileHandle</li>
+					<li>profileFirstName</li>
+					<li>profileLastName</li>
+					<li>profileEmail</li>
+					<li>profileWebsite</li>
+					<li>profilePasswordHash</li>
+					<li>profilePasswordSalt</li>
 				</ul>
 				<ul><b>JOB POST</b>
+					<li>jobPostId</li> (primary key)
 					<li>jobPostProfileId (foreign key)</li>
 					<li>jobPostDate</li>
+					<li>jobPostDeadline</li>
 					<li>jobPostContent</li>
-					<li>jobPostLinktoApplication</li>
+					<li>jobPostCity</li>
+					<li>jobPostCountry</li>
 				</ul>
 				<ul>
-					<b>APPLY</b>
-					<li>applyContent</li>
-					<li>applyLink</li>
-					<li>applyEmail</li>
+					<b>JOB TAG</b>
+					<li>jobTagId</li>
+					<li>jobTagName</li>
+					<li>jobTagArchitecture</li>
+					<li>jobTagDesign</li>
+					<li>jobTagInteriors</li>
 				</ul>
 			<h3>Relations</h3>
 			<ul>
-				<li>One <b>USER</b> can have one <b>PROFILE (1 - n)</b></li>
-				<li>One <b>JOB POST</b> can have many <b>VIEWS (m - n)</b></li>
-				<li>Many <b>PROFILES</b> can apply to many <b>JOB POSTINGS (m - n)</b></li>
+				<li>One <b>PROFILE</b> can have one <b>PROFILE ID (1 - n)</b></li>
+				<li>One <b>PROFILE</b> can have many <b>JOB POSTS (m - n)</b></li>
+				<li>One <b>PROFILE</b> can apply to many <b>JOB POSTS (m - n)</b></li>
+				<li>One <b>JOB POST</b> can have many <b>JOB POST TAGS (m - n)</b></li>
+				<li>Many <b>PROFILES</b> can create many <b>JOB POSTINGS (m - n)</b></li>
+				<li>Many <b>JOB POSTS</b> can apply to many <b>JOB POSTINGS (m - n)</b></li>
+				<li>Many <b>JOB POSTS</b> can have many <b>JOB POST TAGS (m - n)</b></li>
 			</ul>
-
 		</main>
 		</body>
 </html>
