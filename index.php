@@ -51,32 +51,27 @@
 					<li>profilePasswordHash</li>
 					<li>profilePasswordSalt</li>
 				</ul>
-				<ul><b>JOB POST</b>
-					<li>jobPostId</li> (primary key)
-					<li>jobPostProfileId (foreign key)</li>
-					<li>jobPostDate</li>
-					<li>jobPostDeadline</li>
-					<li>jobPostContent</li>
-					<li>jobPostCity</li>
-					<li>jobPostCountry</li>
+				<ul><b>POST</b>
+					<li>postId (primary key)</li>
+					<li>postProfileId (foreign key)</li>
+					<li>postDate</li>
+					<li>postDeadline</li>
+					<li>postContent</li>
+					<li>postCity</li>
+					<li>postCountry</li>
 				</ul>
-				<ul>
-					<b>JOB TAG</b>
-					<li>jobTagId</li>
-					<li>jobTagName</li>
-					<li>jobTagArchitecture</li>
-					<li>jobTagDesign</li>
-					<li>jobTagInteriors</li>
+				<ul><b>TAG</b>
+					<li>tagId(primary key)</li>
+					<li>tagName</li>
 				</ul>
+			<ul><b>POST TAG</b>
+				<li>postTagId(primary key)</li>
+				<li>postTagName</li>
+			</ul>
 			<h3>Relations</h3>
 			<ul>
-				<li>One <b>PROFILE</b> can have one <b>PROFILE ID (1 - n)</b></li>
-				<li>One <b>PROFILE</b> can have many <b>JOB POSTS (m - n)</b></li>
-				<li>One <b>PROFILE</b> can apply to many <b>JOB POSTS (m - n)</b></li>
-				<li>One <b>JOB POST</b> can have many <b>JOB POST TAGS (m - n)</b></li>
-				<li>Many <b>PROFILES</b> can create many <b>JOB POSTINGS (m - n)</b></li>
-				<li>Many <b>JOB POSTS</b> can apply to many <b>JOB POSTINGS (m - n)</b></li>
-				<li>Many <b>JOB POSTS</b> can have many <b>JOB POST TAGS (m - n)</b></li>
+				<li>One <b>PROFILE</b> can post many <b>JOB POSTS (1 - n)</b></li>
+				<li>Many <b>JOB POSTS</b> contain many <b>JOB POST TAGS (m - n)</b></li>
 			</ul>
 		</main>
 		</body>
