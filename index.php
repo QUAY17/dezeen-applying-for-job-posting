@@ -65,8 +65,8 @@
 					<li>tagName</li>
 				</ul>
 			<ul><b>POST TAG</b>
-				<li>postTagId(primary key)</li>
-				<li>postTagName</li>
+				<li>postTagId(foreign key)</li>
+				<li>postTagName(foreign key)</li>
 			</ul>
 			<h3>Relations</h3>
 			<ul>
