@@ -153,3 +153,32 @@ hrows \TypeError if $newPostContent is not a string
 	 *
 	 * @return string value of post content
 	 **/
+	public function getPostContent() {
+		return($this->PostContent);
+	}
+
+	/**
+	 * mutator method for post content
+	 *
+	 * @param string $newPostContent new value of post content
+	 * @throws \InvalidArgumentException if $newPostContent is insecure
+	 * @throws \RangeException if $newPostContent is > 140 characters
+	 * @throws \TypeError if $newPostContent is not a string
+	 **/
+
+	public function setPostContent(string $newPostContent) {
+		// verify the post content is secure
+		$newPostContent = trim($newPostContent);
+		$newPostContent = filter_var($newPostContent, FILTER_SANITIZE_STRING, FILTER_FLAG_NO_ENCODE_QUOTES);
+		if(empty($newPostContent) === true) {
+			throw(new \InvalidArgumentException("post content is empty or insecure"));
+		}
+
+		// verify the post content will fit in the database
+		if(strlen($newPostContent) > 2000) {
+			throw(new \RangeException("post content too large, please summarize in less than 2000 characters"));
+		}
+
+		// store the post content
+		$this->postContent = $newPostContent;
+	}
