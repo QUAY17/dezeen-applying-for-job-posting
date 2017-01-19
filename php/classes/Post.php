@@ -45,3 +45,19 @@ class Post implements \JsonSerializable {
 		 * @var \DateTime $postDeadline
 		 **/
 	private $postDeadline;
+
+	/**constructor for this post
+	 *
+	 * @param int|null $newPostId id of the post or null if a new Post
+	 * @param int $newPostProfileId id of the Profile that submitted the Post
+	 * @param \TIMESTAMP|string $newPostDate date and time Post was sent
+	 * @param string $newPostContent string containing actual Post data
+	 * @param string $newPostCity string containing City of Post
+	 * @param string $newPostCountry string containing Country of Post
+	 * @param \DateTime|string $newPostDeadline date and time of deadline
+	 * @throws \InvalidArgumentException if data types are not valid
+	 * @throws \RangeException if data values are out of bounds (e.g., strings too long, negative integers)
+	 * @throws \TypeError if data types violate type hints
+	 * @throws \Exception if some other exception occurs
+	 **/
+
