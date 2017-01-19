@@ -182,3 +182,45 @@ hrows \TypeError if $newPostContent is not a string
 		// store the post content
 		$this->postContent = $newPostContent;
 	}
+	/**
+	 * accessor method for post date
+	 *
+	 * @return \TimeStamp value of post date
+	 **/
+	public function getPostDate() {
+		return($this->PostDate);
+	}
+
+	/**
+	 * mutator method for post date
+	 *
+	 * @param \TimeStamp|string $newPostDate post date as a TimeStamp object or string
+	 * @throws \InvalidArgumentException if $newPostDate is not a valid object or string
+	 * @throws \RangeException if $newPostDate is a date that does not exist
+	 **/
+
+	public function setPostDate($newPostDate = null) {
+		// base case: if the date is null, use the current date and time
+		if($newPostDate === null) {
+			$this->PostDate = new \TimeStamp();
+			return;
+		}
+
+		// store the post date
+		try {
+			$newpostDate = self::validateTimeStamp($newPostDate);
+		} catch(\InvalidArgumentException $invalidArgument) {
+			throw(new \InvalidArgumentException($invalidArgument->getMessage(), 0, $invalidArgument));
+		} catch(\RangeException $range) {
+			throw(new \RangeException($range->getMessage(), 0, $range));
+		}
+		$this->postDate = $newPostDate;
+	}
+
+	/**
+	 * inserts this Post into mySQL
+	 *
+	 * @param \PDO $pdo PDO connection object
+	 * @throws \PDOException when mySQL related errors occur
+	 * @throws \TypeError if $pdo is not a PDO connection object
+	 **/
