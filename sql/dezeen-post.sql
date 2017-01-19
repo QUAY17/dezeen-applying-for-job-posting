@@ -42,3 +42,4 @@
 			FOREIGN KEY(postTagId),
 			FOREIGN KEY(postTagName)
 		);
+
