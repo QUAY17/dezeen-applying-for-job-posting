@@ -8,7 +8,7 @@
 * @version 1.0.0
 **/
 
-class Post implements \JsonSerializable {
+class Post {
 	use ValidateDate;
 	/**
 	 * id for this Post; this is the primary key
@@ -19,10 +19,10 @@ class Post implements \JsonSerializable {
 	 * id of the Profile that submitted post; this is a foreign key
 	 * @var int $postProfileId
 	 **/
-	private $postProfileId
+	private $postProfileId;
 	/**
- 	* date and time this post was submitted, in a PHP TimeStamp object
- 	* @var \TimeStamp $postDate
+	 * date and time this post was submitted, in a PHP DateTime object
+	 * @var \DateTime $postDate
 	 **/
 	private $postDate;
 	/**
@@ -30,22 +30,22 @@ class Post implements \JsonSerializable {
 	 * @var string $postContent
 	 **/
 	private $postContent;
-		/**
-		 * City location of post
-		 * @var string $postCity
-		 **/
+	/**
+	 * City location of post
+	 * @var string $postCity
+	 **/
 	private $postCity;
-		/**
-		 * Country location of post
-		 * @var string $postCountry
-		 **/
+	/**
+	 * Country location of post
+	 * @var string $postCountry
+	 **/
 	private $postCountry;
 
 	/**constructor for this post
 	 *
 	 * @param int|null $newPostId id of the post or null if a new Post
 	 * @param int $newPostProfileId id of the Profile that submitted the Post
-	 * @param \TIMESTAMP|string $newPostDate date and time Post was sent
+	 * @param \DateTime|string $newPostDate date and time Post was sent
 	 * @param string $newPostContent string containing actual Post data
 	 * @param string $newPostCity string containing City of Post
 	 * @param string $newPostCountry string containing Country of Post
@@ -55,7 +55,7 @@ class Post implements \JsonSerializable {
 	 * @throws \Exception if some other exception occurs
 	 **/
 
-	public function __construct(int $newPostId = null, int $newPostProfileId, string $newPostContent, $newPostDate, string $newPostCity, string $newPostCounty, $newTweetDeadline = null) {
+	public function __construct(int $newPostId = null, int $newPostProfileId, string $newPostContent, $newPostDate, string $newPostCity, string $newPostCountry, $newTweetDeadline = null) {
 		try {
 			$this->setPostId($newPostId);
 			$this->setPostProfileId($newPostProfileId);
@@ -84,7 +84,7 @@ class Post implements \JsonSerializable {
 	 * @return int|null value of post id
 	 **/
 	public function getPostId() {
-		return($this->PostId);
+		return ($this->postId);
 	}
 
 	/**
@@ -117,7 +117,7 @@ class Post implements \JsonSerializable {
 	 * @return int value of post profile id
 	 **/
 	public function getPostProfileId() {
-		return($this->postProfileId);
+		return ($this->postProfileId);
 	}
 
 	/**
@@ -144,7 +144,7 @@ class Post implements \JsonSerializable {
 	 * @return string value of post content
 	 **/
 	public function getPostContent() {
-		return($this->postContent);
+		return ($this->postContent);
 	}
 
 	/**
@@ -173,14 +173,15 @@ class Post implements \JsonSerializable {
 		$this->postContent = $newPostContent;
 	}
 
-/**
- * accessor method for post city
- *
- * @return string value of post city
- **/
+	/**
+	 * accessor method for post city
+	 *
+	 * @return string value of post city
+	 **/
 	public function getPostCity() {
-		return($this->postCity);
+		return ($this->postCity);
 	}
+
 	/**
 	 * mutator method for post city
 	 * @param string $newPostCity new value of post city
@@ -206,13 +207,13 @@ class Post implements \JsonSerializable {
 		$this->postCity = $newPostCity;
 	}
 
-		/**
-		 * accessor method for post country
-		 *
-		 * @return string value of post country
-		 **/
+	/**
+	 * accessor method for post country
+	 *
+	 * @return string value of post country
+	 **/
 	public function getPostCountry() {
-		return($this->postCountry);
+		return ($this->postCountry);
 	}
 
 	/**
@@ -240,19 +241,20 @@ class Post implements \JsonSerializable {
 		// store the post country
 		$this->postCountry = $newPostCountry;
 	}
-		/**
-		 * accessor method for post date
-		 *
-		 * @return \TimeStamp value of post date
-		 **/
+
+	/**
+	 * accessor method for post date
+	 *
+	 * @return \DateTime value of post date
+	 **/
 	public function getPostDate() {
-		return($this->postDate);
+		return ($this->postDate);
 	}
 
 	/**
 	 * mutator method for post date
 	 *
-	 * @param \TimeStamp|string $newPostDate post date as a TimeStamp object or string
+	 * @param \DateTime|string $newPostDate post date as a DateTime object or string
 	 * @throws \InvalidArgumentException if $newPostDate is not a valid object or string
 	 * @throws \RangeException if $newPostDate is a date that does not exist
 	 **/
@@ -260,13 +262,13 @@ class Post implements \JsonSerializable {
 	public function setPostDate($newPostDate = null) {
 		// base case: if the date is null, use the current date and time
 		if($newPostDate === null) {
-			$this->postDate = new \TimeStamp();
+			$this->postDate = new \DateTime();
 			return;
 		}
 
 		// store the post date
 		try {
-			$newPostDate = self::validateTimeStamp($newPostDate);
+			$newPostDate = self::validateDateTime($newPostDate);
 		} catch(\InvalidArgumentException $invalidArgument) {
 			throw(new \InvalidArgumentException($invalidArgument->getMessage(), 0, $invalidArgument));
 		} catch(\RangeException $range) {
@@ -274,6 +276,7 @@ class Post implements \JsonSerializable {
 		}
 		$this->postDate = $newPostDate;
 	}
+}
 	/**
 	 * inserts this Post into mySQL
 	 *
