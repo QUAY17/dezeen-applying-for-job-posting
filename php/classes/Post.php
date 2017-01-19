@@ -1,9 +1,16 @@
+<?php
 /**
-* Small Cross Section of a Twitter like Message
+* Small section of a post on Dezeen Jobs https://www.dezeenjobs.com/
 *
-* This Tweet can be considered a small example of what services like Twitter store when messages are sent and
-* received using Twitter. This can easily be extended to emulate more features of Twitter.
+* This can be considered a small example of what Dezeen Jobs stores when a user attempts to post content on the job forum.
 *
-* @author Dylan McDonald <dmcdonald21@cnm.edu>
-* @version 3.0.0
+* @author Jennifer Minnich <jminnich@cnm.edu>
+* @version 1.0.0
 **/
+
+class Post implements \JsonSerializable {
+	use ValidateDate;
+	/**
+	 * id for this Post; this is the primary key
+	 * @var int $PostId
+	 **/
