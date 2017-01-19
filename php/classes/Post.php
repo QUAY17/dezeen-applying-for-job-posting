@@ -61,3 +61,32 @@ class Post implements \JsonSerializable {
 	 * @throws \Exception if some other exception occurs
 	 **/
 
+	public function __construct(int $newPostId = null, int $newPostProfileId, string $newPostContent, $newPostDate, string $newPostCity, string $newPostCounty, $newTweetDeadline = null) {
+		try {
+			$this->setPostId($newPostId);
+			$this->setPostProfileId($newPostProfileId);
+			$this->setPostContent($newPostContent);
+			$this->setPostDate($newPostDate);
+			$this->setPostCity($newPostCity);
+			$this->setPostCountry($newPostCountry);
+			$this->setPostDeadline($newPostDeadline);
+		} catch(\InvalidArgumentException $invalidArgument) {
+			// rethrow the exception to the caller
+			throw(new \InvalidArgumentException($invalidArgument->getMessage(), 0, $invalidArgument));
+		} catch(\RangeException $range) {
+			// rethrow the exception to the caller
+			throw(new \RangeException($range->getMessage(), 0, $range));
+		} catch(\TypeError $typeError) {
+			// rethrow the exception to the caller
+			throw(new \TypeError($typeError->getMessage(), 0, $typeError));
+		} catch(\Exception $exception) {
+			// rethrow the exception to the caller
+			throw(new \Exception($exception->getMessage(), 0, $exception));
+		}
+	}
+
+	/**
+	 * accessor method for post id
+	 *
+	 * @return int|null value of post id
+	 **/
