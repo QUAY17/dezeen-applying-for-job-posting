@@ -20,8 +20,8 @@
 			profileDate TIMESTAMP DEFAULT CURRENT_TIMESTAMP NOT NULL,
 			profileDeadline DATETIME NOT NULL,
 			profileContent VARCHAR(5000),
-			profileCity VARCHAR(32) NOT NULL,
-			profileCountry VARCHAR(32) NOT NULL,
+			profileCity VARCHAR(20) NOT NULL,
+			profileCountry VARCHAR(20) NOT NULL,
 			INDEX(postProfileId),
 			FOREIGN KEY(postProfileId),
 			PRIMARY KEY(postId)

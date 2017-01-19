@@ -154,7 +154,7 @@ hrows \TypeError if $newPostContent is not a string
 	 * @return string value of post content
 	 **/
 	public function getPostContent() {
-		return($this->PostContent);
+		return($this->postContent);
 	}
 
 	/**
@@ -187,8 +187,8 @@ hrows \TypeError if $newPostContent is not a string
 	 *
 	 * @return \TimeStamp value of post date
 	 **/
-	public function getPostDate() {
-		return($this->PostDate);
+	public function getpostDate() {
+		return($this->postDate);
 	}
 
 	/**
@@ -216,7 +216,38 @@ hrows \TypeError if $newPostContent is not a string
 		}
 		$this->postDate = $newPostDate;
 	}
+/**
+ * accessor method for post city
+ *
+ * @return string value of post city
+ **/
+	public function getPostCity() {
+		return($this->postCity);
+	}
+	/**
+	 * mutator method for post city
+	 * @param string $newPostCity new value of post city
+	 * @throws \InvalidArgumentException if $newPostCity is insecure
+	 * @throws \RangeException if $newPostCity is > 20 characters
+	 * @throws \TypeError if $newPostCity is not a string
+	 **/
 
+	public function setPostCity(string $newPostCity) {
+		// verify the post content is secure
+		$newPostCity = trim($newPostCity);
+		$newPostCity = filter_var($newPostCity, FILTER_SANITIZE_STRING, FILTER_FLAG_NO_ENCODE_QUOTES);
+		if(empty($newPostCity) === true) {
+			throw(new \InvalidArgumentException("city content is empty or insecure"));
+		}
+
+		// verify the post city will fit in the database
+		if(strlen($newPostCity) > 20) {
+			throw(new \RangeException("city content too large"));
+		}
+
+		// store the post city
+		$this->postCity = $newPostCity;
+	}
 	/**
 	 * inserts this Post into mySQL
 	 *
