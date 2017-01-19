@@ -90,3 +90,38 @@ class Post implements \JsonSerializable {
 	 *
 	 * @return int|null value of post id
 	 **/
+	public function getPostId() {
+		return($this->PostId);
+	}
+
+	/**
+	 * mutator method for post id
+	 *
+	 * @param int|null $newPostId new value of post id
+	 * @throws \RangeException if $newPostId is not positive
+	 * @throws \TypeError if $newPostId is not an integer
+	 **/
+
+	public function setPostId(int $newPostId = null) {
+		// base case: if the post id is null, this a new tweet without a mySQL assigned id (yet)
+		if($newPostId === null) {
+			$this->PostId = null;
+			return;
+		}
+
+		// verify the post id is positive
+		if($newPostId <= 0) {
+			throw(new \RangeException("post id is not positive, therefore invalid"));
+		}
+
+		// convert and store the post id
+		$this->postId = $newpostId;
+	}
+
+	/**
+	 * accessor method for post profile id
+	 *
+	 * @return int value of post profile id
+	 **/
+hrows \TypeError if $newPostContent is not a string
+	 **/
