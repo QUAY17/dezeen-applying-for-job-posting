@@ -40,11 +40,6 @@ class Post implements \JsonSerializable {
 		 * @var string $postCountry
 		 **/
 	private $postCountry;
-		/**
-		 * deadline of post (duration of time allowed on forum), in a PHP DateTime object
-		 * @var \DateTime $postDeadline
-		 **/
-	private $postDeadline;
 
 	/**constructor for this post
 	 *
@@ -54,7 +49,6 @@ class Post implements \JsonSerializable {
 	 * @param string $newPostContent string containing actual Post data
 	 * @param string $newPostCity string containing City of Post
 	 * @param string $newPostCountry string containing Country of Post
-	 * @param \DateTime|string $newPostDeadline date and time of deadline
 	 * @throws \InvalidArgumentException if data types are not valid
 	 * @throws \RangeException if data values are out of bounds (e.g., strings too long, negative integers)
 	 * @throws \TypeError if data types violate type hints
@@ -69,7 +63,6 @@ class Post implements \JsonSerializable {
 			$this->setPostDate($newPostDate);
 			$this->setPostCity($newPostCity);
 			$this->setPostCountry($newPostCountry);
-			$this->setPostDeadline($newPostDeadline);
 		} catch(\InvalidArgumentException $invalidArgument) {
 			// rethrow the exception to the caller
 			throw(new \InvalidArgumentException($invalidArgument->getMessage(), 0, $invalidArgument));
@@ -115,7 +108,7 @@ class Post implements \JsonSerializable {
 		}
 
 		// convert and store the post id
-		$this->postId = $newpostId;
+		$this->postId = $newPostId;
 	}
 
 	/**
@@ -123,11 +116,8 @@ class Post implements \JsonSerializable {
 	 *
 	 * @return int value of post profile id
 	 **/
-hrows \TypeError if $newPostContent is not a string
-	 **/
-
 	public function getPostProfileId() {
-		return($this->PostProfileId);
+		return($this->postProfileId);
 	}
 
 	/**
@@ -145,7 +135,7 @@ hrows \TypeError if $newPostContent is not a string
 		}
 
 		// convert and store the profile id
-		$this->PostProfileId = $newPostProfileId;
+		$this->postProfileId = $newPostProfileId;
 	}
 
 	/**
@@ -182,40 +172,7 @@ hrows \TypeError if $newPostContent is not a string
 		// store the post content
 		$this->postContent = $newPostContent;
 	}
-	/**
-	 * accessor method for post date
-	 *
-	 * @return \TimeStamp value of post date
-	 **/
-	public function getpostDate() {
-		return($this->postDate);
-	}
 
-	/**
-	 * mutator method for post date
-	 *
-	 * @param \TimeStamp|string $newPostDate post date as a TimeStamp object or string
-	 * @throws \InvalidArgumentException if $newPostDate is not a valid object or string
-	 * @throws \RangeException if $newPostDate is a date that does not exist
-	 **/
-
-	public function setPostDate($newPostDate = null) {
-		// base case: if the date is null, use the current date and time
-		if($newPostDate === null) {
-			$this->PostDate = new \TimeStamp();
-			return;
-		}
-
-		// store the post date
-		try {
-			$newpostDate = self::validateTimeStamp($newPostDate);
-		} catch(\InvalidArgumentException $invalidArgument) {
-			throw(new \InvalidArgumentException($invalidArgument->getMessage(), 0, $invalidArgument));
-		} catch(\RangeException $range) {
-			throw(new \RangeException($range->getMessage(), 0, $range));
-		}
-		$this->postDate = $newPostDate;
-	}
 /**
  * accessor method for post city
  *
@@ -237,16 +194,85 @@ hrows \TypeError if $newPostContent is not a string
 		$newPostCity = trim($newPostCity);
 		$newPostCity = filter_var($newPostCity, FILTER_SANITIZE_STRING, FILTER_FLAG_NO_ENCODE_QUOTES);
 		if(empty($newPostCity) === true) {
-			throw(new \InvalidArgumentException("city content is empty or insecure"));
+			throw(new \InvalidArgumentException("city is empty or insecure"));
 		}
 
 		// verify the post city will fit in the database
 		if(strlen($newPostCity) > 20) {
-			throw(new \RangeException("city content too large"));
+			throw(new \RangeException("city too large"));
 		}
 
 		// store the post city
 		$this->postCity = $newPostCity;
+	}
+
+		/**
+		 * accessor method for post country
+		 *
+		 * @return string value of post country
+		 **/
+	public function getPostCountry() {
+		return($this->postCountry);
+	}
+
+	/**
+	 * mutator method for post content
+	 *
+	 * @param string $newPostCountry new value of post country
+	 * @throws \InvalidArgumentException if $newPostCountry is insecure
+	 * @throws \RangeException if $newPostCountry is > 20 characters
+	 * @throws \TypeError if $newPostCountry is not a string
+	 **/
+
+	public function setPostCountry(string $newPostCountry) {
+		// verify the post country is secure
+		$newPostCountry = trim($newPostCountry);
+		$newPostCountry = filter_var($newPostCountry, FILTER_SANITIZE_STRING, FILTER_FLAG_NO_ENCODE_QUOTES);
+		if(empty($newPostCountry) === true) {
+			throw(new \InvalidArgumentException("country is empty or insecure"));
+		}
+
+		// verify the post country will fit in the database
+		if(strlen($newPostCountry) > 20) {
+			throw(new \RangeException("country too large"));
+		}
+
+		// store the post country
+		$this->postCountry = $newPostCountry;
+	}
+		/**
+		 * accessor method for post date
+		 *
+		 * @return \TimeStamp value of post date
+		 **/
+	public function getPostDate() {
+		return($this->postDate);
+	}
+
+	/**
+	 * mutator method for post date
+	 *
+	 * @param \TimeStamp|string $newPostDate post date as a TimeStamp object or string
+	 * @throws \InvalidArgumentException if $newPostDate is not a valid object or string
+	 * @throws \RangeException if $newPostDate is a date that does not exist
+	 **/
+
+	public function setPostDate($newPostDate = null) {
+		// base case: if the date is null, use the current date and time
+		if($newPostDate === null) {
+			$this->postDate = new \TimeStamp();
+			return;
+		}
+
+		// store the post date
+		try {
+			$newPostDate = self::validateTimeStamp($newPostDate);
+		} catch(\InvalidArgumentException $invalidArgument) {
+			throw(new \InvalidArgumentException($invalidArgument->getMessage(), 0, $invalidArgument));
+		} catch(\RangeException $range) {
+			throw(new \RangeException($range->getMessage(), 0, $range));
+		}
+		$this->postDate = $newPostDate;
 	}
 	/**
 	 * inserts this Post into mySQL
