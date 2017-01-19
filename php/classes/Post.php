@@ -125,3 +125,31 @@ class Post implements \JsonSerializable {
 	 **/
 hrows \TypeError if $newPostContent is not a string
 	 **/
+
+	public function getPostProfileId() {
+		return($this->PostProfileId);
+	}
+
+	/**
+	 * mutator method for post profile id
+	 *
+	 * @param int $newPostProfileId new value of post profile id
+	 * @throws \RangeException if $newPostProfileId is not positive
+	 * @throws \TypeError if $newPostProfileId is not an integer
+	 **/
+
+	public function setPostProfileId(int $newPostProfileId) {
+		// verify the profile id is positive
+		if($newPostProfileId <= 0) {
+			throw(new \RangeException("post profile id is not positive, therefore invalid"));
+		}
+
+		// convert and store the profile id
+		$this->PostProfileId = $newPostProfileId;
+	}
+
+	/**
+	 * accessor method for post content
+	 *
+	 * @return string value of post content
+	 **/
