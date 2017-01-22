@@ -276,7 +276,7 @@ class Post {
 		}
 		$this->postDate = $newPostDate;
 	}
-}
+
 	/**
 	 * inserts this Post into mySQL
 	 *
@@ -284,3 +284,71 @@ class Post {
 	 * @throws \PDOException when mySQL related errors occur
 	 * @throws \TypeError if $pdo is not a PDO connection object
 	 **/
+
+	public function insert(\PDO $pdo) {
+		// enforce the PostId is  null (i.e., don't insert a post that already exists)
+		if($this->postId !== null) {
+			throw(new \PDOException("not a new post"));
+		}
+
+		// create query template
+		$query = "INSERT INTO post(postProfileId, postContent, postDate) VALUES(:postProfileId, :postContent, :postDate)";
+		$statement = $pdo->prepare($query);
+
+		// bind the member variables to the place holders in the template
+		$formattedDate = $this->postDate->format("Y-m-d H:i:s");
+		$parameters = ["postProfileId" => $this->postProfileId, "postContent" => $this->postContent, "postDate" => $formattedDate];
+		$statement->execute($parameters);
+
+		// update the null PostId with what mySQL just gave us
+		$this->postId = intval($pdo->lastInsertId());
+	}
+
+
+	/**
+	 * deletes this post from mySQL
+	 *
+	 * @param \PDO $pdo PDO connection object
+	 * @throws \PDOException when mySQL related errors occur
+	 * @throws \TypeError if $pdo is not a PDO connection object
+	 **/
+
+	public function delete(\PDO $pdo) {
+		// enforce the postId is not null (i.e., don't delete a post that hasn't been inserted)
+		if($this->postId === null) {
+			throw(new \PDOException("unable to delete a post that does not exist"));
+		}
+
+		// create query template
+		$query = "DELETE FROM post WHERE postId = :postId";
+		$statement = $pdo->prepare($query);
+
+		// bind the member variables to the place holder in the template
+		$parameters = ["postId" => $this->tweetId];
+		$statement->execute($parameters);
+	}
+
+	/**
+	 * updates this Tweet in mySQL
+	 *
+	 * @param \PDO $pdo PDO connection object
+	 * @throws \PDOException when mySQL related errors occur
+	 * @throws \TypeError if $pdo is not a PDO connection object
+	 **/
+
+	public function update(\PDO $pdo) {
+		// enforce the postId is not null (i.e., don't update a post that hasn't been inserted)
+		if($this->postId === null) {
+			throw(new \PDOException("unable to update a post that does not exist"));
+		}
+
+		// create query template
+		$query = "UPDATE post SET postProfileId = :postProfileId, postContent = :postContent, postDate = :postDate WHERE postId = :postId";
+		$statement = $pdo->prepare($query);
+
+		// bind the member variables to the place holders in the template
+		$formattedDate = $this->postDate->format("Y-m-d H:i:s");
+		$parameters = ["postProfileId" => $this->postProfileId, "postContent" => $this->postContent, "postDate" => $formattedDate, "postId" => $this->posttId];
+		$statement->execute($parameters);
+	}
+}

@@ -70,8 +70,8 @@
 			</ul>
 			<h3>Relations</h3>
 			<ul>
-				<li>One <b>PROFILE</b> can post many <b>JOB POSTS (1 - n)</b></li>
-				<li>Many <b>JOB POSTS</b> contain many <b>JOB POST TAGS (m - n)</b></li>
+				<li>One <b>PROFILE</b> can post many <b>POSTS (1 - n)</b></li>
+				<li>Many <b>POSTS</b> contain many <b>POST TAGS (m - n)</b></li>
 			</ul>
 		</main>
 		</body>
