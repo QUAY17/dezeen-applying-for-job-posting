@@ -7,8 +7,7 @@
 * @author Jennifer Minnich <jminnich@cnm.edu>
 * @version 1.0.0
 **/
-
-class Post {
+class Post implements \JsonSerializable {
 	use ValidateDate;
 	/**
 	 * id for this Post; this is the primary key
@@ -351,4 +350,15 @@ class Post {
 		$parameters = ["postProfileId" => $this->postProfileId, "postContent" => $this->postContent, "postDate" => $formattedDate, "postId" => $this->posttId];
 		$statement->execute($parameters);
 	}
+
+/**
+ * formats the state variables for JSON serialization
+ *
+ * @return array resulting state variables to serialize
+ **/
+public function jsonSerialize() {
+	$fields = get_object_vars($this);
+	$fields["postDate"] = $this->postDate->getTimestamp() * 1000;
+	return($fields);
+}
 }
