@@ -74,7 +74,7 @@
 				<li>Many <b>POSTS</b> contain many <b>POST TAGS (m - n)</b></li>
 			</ul>
 		<h3>erd</h3>
-			<img src="../../images/dezeen-erd.jpg" alt="diagram" align="center" width="45%" height="50%">
+			<img src="images/dezeen-erd.jpg" alt="diagram" align="center" width="45%" height="50%">
 		</main>
 		</body>
 </html>
