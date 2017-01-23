@@ -73,6 +73,8 @@
 				<li>One <b>PROFILE</b> can post many <b>POSTS (1 - n)</b></li>
 				<li>Many <b>POSTS</b> contain many <b>POST TAGS (m - n)</b></li>
 			</ul>
+		<h3>erd</h3>
+			<img src="../../images/dezeen-erd.jpg" alt="diagram" align="center" width="45%" height="50%">
 		</main>
 		</body>
 </html>
